@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AETHEL-9 // Cryptographic Mystery Box</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =================================================================
+       🕵️ SECRET DEVTOOLS CLUE FOR LAYER 1:
+       Congratulations Inspector! To unlock Layer 1, either:
+       1) Enter the override key: "OBSIDIAN-404" in the Layer 1 input box, OR
+       2) Edit the attribute below from data-vault-override="false" to "true"!
+  ================================================================== -->
+
+  <div class="vault-container" id="dom-lock" data-vault-override="false">
+
+    <!-- TOP HEADER -->
+    <header class="vault-header">
+      <div class="brand">
+        <span class="core-dot"></span>
+        <span>AETHEL-9 // MYSTERY BOX</span>
+      </div>
+      <div id="vaultBadge" class="badge badge-locked">SEALED (0/3)</div>
+    </header>
+
+    <!-- DIAGNOSTIC / SYSTEM TERMINAL BAR -->
+    <div id="terminalLog" class="terminal-bar">
+      &gt; SYSTEM INITIALIZED. 3 CRYPTOGRAPHIC SEALS ACTIVE...
+    </div>
+
+    <!-- PRESENTER / DEMO QUICK-TEST BAR (Easy testing for team & judges) -->
+    <div class="demo-bar">
+      <span>⚡ Dev/Judge Controls:</span>
+      <button onclick="triggerDemoLayer(1)">Solve L1</button>
+      <button onclick="triggerDemoLayer(2)">Solve L2</button>
+      <button onclick="triggerDemoLayer(3)">Solve L3</button>
+      <button onclick="resetAllLocks()" class="btn-danger">Reset Box</button>
+    </div>
+
+    <!-- PROGRESS RINGS / SEAL INDICATORS -->
+    <section class="seal-grid">
+      <div id="sealIndicator1" class="seal-pill">L1: DOM SEAL</div>
+      <div id="sealIndicator2" class="seal-pill">L2: TAB SYNC</div>
+      <div id="sealIndicator3" class="seal-pill">L3: TEMPORAL</div>
+    </section>
+
+    <!-- ==========================================
+         LAYER 1: DOM INSPECTION PUZZLE
+    =========================================== -->
+    <section id="cardLayer1" class="puzzle-card">
+      <div class="card-header">
+        <span class="layer-tag">LAYER 01 // DOM INSPECTION</span>
+        <span id="statusL1" class="lock-state">🔒 LOCKED</span>
+      </div>
+      <p class="puzzle-desc">
+        The first cipher is buried inside the source architecture. Inspect this page's DOM (`F12` &rarr; Elements) to find the hidden comment key, or mutate <code>data-vault-override="true"</code> on <code>#dom-lock</code>.
+      </p>
+      <div class="input-row">
+        <input type="text" id="inputL1" placeholder="Enter DOM Cipher Key..." />
+        <button onclick="verifyLayer1()">Decrypt</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LAYER 2: CROSS-TAB QUANTUM SYNC
+    =========================================== -->
+    <section id="cardLayer2" class="puzzle-card">
+      <div class="card-header">
+        <span class="layer-tag">LAYER 02 // CROSS-TAB SYNC</span>
+        <span id="statusL2" class="lock-state">🔒 LOCKED</span>
+      </div>
+      <p class="puzzle-desc">
+        This lock requires dual-tab quantum entanglement. Open a second browser tab of this box and transmit a simultaneous sync pulse across the <code>BroadcastChannel</code> bridge.
+      </p>
+      <div class="sync-row">
+        <button onclick="spawnSecondTab()" class="btn-secondary">1. Spawn Twin Tab</button>
+        <button onclick="sendCrossTabPulse()" class="btn-accent">2. Transmit Sync Pulse</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LAYER 3: TEMPORAL LOGIC GATE
+    =========================================== -->
+    <section id="cardLayer3" class="puzzle-card">
+      <div class="card-header">
+        <span class="layer-tag">LAYER 03 // TEMPORAL LOGIC</span>
+        <span id="statusL3" class="lock-state">🔒 LOCKED</span>
+      </div>
+      <p class="puzzle-desc">
+        Time-locked hash gate. The temporal barrier only opens when the system clock's seconds fall inside an <strong>EVEN 10-second window</strong> (e.g., :00–:09, :20–:29, :40–:49) AND you submit the live rotating Temporal Token.
+      </p>
+      <div class="temporal-telemetry">
+        <div>UTC Clock: <strong id="clockDisplay">--:--:--</strong></div>
+        <div>Window: <strong id="windowState" class="window-closed">CLOSED</strong></div>
+        <div>Live Token: <strong id="liveTokenDisplay">----</strong></div>
+      </div>
+      <div class="input-row">
+        <input type="text" id="inputL3" placeholder="Enter Live 4-Digit Token..." />
+        <button onclick="verifyLayer3()">Strike Gate</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FINAL UNLOCKED VAULT PAYLOAD
+    =========================================== -->
+    <section id="finalVault" class="final-vault hidden">
+      <h2>🔓 MYSTERY BOX UNSEALED</h2>
+      <p>All three cryptographic barriers (DOM, Cross-Tab, Temporal) have been breached.</p>
+      <div class="secret-flag" id="finalFlagBox">FLAG{QUANTUM_DOM_CHRONO_MASTER_2026}</div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
